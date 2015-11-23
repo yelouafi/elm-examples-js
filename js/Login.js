@@ -20,7 +20,7 @@ function doLogin(state, dispatch, onLogin) {
   dispatch(Action.LoginStart());
   login(state.name, state.password)
     .then(() => onLogin(state.name))
-    .catch(err => dispatch(Action.LoginError(err)));
+    .catch(pipe(Action.LoginError, dispatch));
 }
 
 const view = ({ state, dispatch, onLogin }) =>

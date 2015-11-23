@@ -180,9 +180,7 @@ function doLogin(state, dispatch, onLogin) {
   dispatch(Action.LoginStart());
   (0, _api.login)(state.name, state.password).then(function () {
     return onLogin(state.name);
-  }).catch(function (err) {
-    return dispatch(Action.LoginError(err));
-  });
+  }).catch((0, _helpers.pipe)(Action.LoginError, dispatch));
 }
 
 var view = function view(_ref) {
