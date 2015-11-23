@@ -13,7 +13,6 @@ const Action = Type({
 const onSubmit = (state, dispatch, onLogin) => event => {
   event.preventDefault();
   doLogin(state, dispatch, onLogin);
-  return false;
 }
 
 function doLogin(state, dispatch, onLogin) {

@@ -172,7 +172,6 @@ var onSubmit = function onSubmit(state, dispatch, onLogin) {
   return function (event) {
     event.preventDefault();
     doLogin(state, dispatch, onLogin);
-    return false;
   };
 };
 
